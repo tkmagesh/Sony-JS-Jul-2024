@@ -187,7 +187,7 @@ function GetAttrs(o){
 ### Important
 `In JavaScript, it does not matter WHO owns the function or WHERE the function is. What matters is 'HOW' the function is invoked`
 
-## As a method of an object
+### 1. As a method of an object
 
 `this -> obj`
 
@@ -211,9 +211,24 @@ product['whoAmI'] = whoAmI
 product.whoAmI()
 ```
 
-## As a 'function'
+### 2. As a 'function'
 `this -> global (window in the browser)`
 ```js
 window.name = 'Chrome Browser'
 whoAmI()
+```
+
+### 3. As an 'Immediately Invoked Function Expression' (IIFE)
+```js
+(function fn(){
+    console.log('fn invoked');
+})()
+
+(function greet(userName){
+    console.log('Hi ' + userName + ', Good Day!')
+})('Magesh')
+
+var result = (function add(x,y){
+    return x + y;
+})(100,200)
 ```

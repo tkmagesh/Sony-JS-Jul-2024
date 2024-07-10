@@ -4,11 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Click Tracer</title>
+    <script>
+        (function myApp(){
+            var counter = 0;
+            function onBtnTrackClick(){
+                counter++
+                document.getElementById('divCounter').innerText = counter;
+            }
+            function onDocumentLoad(){
+                var btnTrack = document.getElementById('btnTrack')
+                btnTrack.addEventListener('click', onBtnTrackClick)
+            }
+            window.addEventListener('load', onDocumentLoad)
+        })()
+        // myApp()
+    </script>
 </head>
 <body>
     <h1>Click Tracker</h1>
     <hr>
     <button id="btnTrack">Track</button>
     <div id="divCounter">0</div>
+    
 </body>
 </html>
