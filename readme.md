@@ -12,4 +12,5 @@
 - Discussion & Code
 ## Repository
 - https://github.com/tkmagesh/sony-js-jul-2024
-
+## Recordings
+- https://bit.ly/javascript-training-videos
