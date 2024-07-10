@@ -232,3 +232,41 @@ var result = (function add(x,y){
     return x + y;
 })(100,200)
 ```
+#### Using IIFE to create closures
+##### Click Tracker (example)
+[Source Code](./Day-01/clickTracker.html)
+
+![image](./images/closures.png)
+##### Assignment
+```js
+/* 
+Create an object with the following methods and assign it to a variable 'spinner'
+
+var spinner =  ..... 
+
+- Methods
+    - up()
+    - down()
+- behavior
+    spinner.up() //=> 1
+    spinner.up() //=> 2
+    spinner.up() //=> 3
+    spinner.up() //=> 4
+
+    spinner.down() //=> 3
+    spinner.down() //=> 2
+    spinner.down() //=> 1
+    spinner.down() //=> 0
+    spinner.down() //=> -1
+IMPORTANT
+- Ensure that the outcome of up() and down() methods CANNOT be influenced from outside
+    The following SHOULD NOT be possible
+    ======
+    window.counter = 10000
+    spinner.up() //=> 10001
+    ======
+    spinner.counter = 10000
+    spinner.up() //=> 10001
+- No HTML, No DOM APIs, No UI
+*/
+```
