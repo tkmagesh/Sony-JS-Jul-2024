@@ -269,4 +269,48 @@ IMPORTANT
     spinner.up() //=> 10001
 - No HTML, No DOM APIs, No UI
 */
+// creating a Singleton using IIFE
+// var spinner = (function(){
+//     var counter = 0
+
+//     function up(){
+//         return ++counter;
+//     }
+//     function down(){
+//         return --counter;
+//     }
+//     var spinner = {
+//         up : up,
+//         down : down
+//     }
+//     return spinner;
+// })()
+var spinner = (function(){
+    var counter = 0;
+    return {
+        up : function(){
+            return ++counter;
+        },
+        down : function(){
+            return --counter;
+        }
+    }
+})
+
+// Factory
+function spinnerFactory(){
+    var counter = 0
+
+    function up(){
+        return ++counter;
+    }
+    function down(){
+        return --counter;
+    }
+    var spinner = {
+        up : up,
+        down : down
+    }
+    return spinner;
+}
 ```
