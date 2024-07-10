@@ -64,3 +64,59 @@ adder(100,200)
 
 getAdder()(100,400)
 ```
+
+## Object
+## object literal
+
+```js
+var obj = {}
+```
+
+## object with attributes
+```js
+var emp = {
+    id : 100,
+    name : 'Magesh',
+    salary : 10000
+}```
+## object with attributes & methods
+```js
+var product = {
+    id : 100,
+    name : 'Pen',
+    cost : 10,
+    applyDiscount : function(discount){
+        this.cost = this.cost * ((100-discount)/100)
+    }
+}
+
+
+console.log(product)
+
+product.applyDiscount(10)
+
+console.log(product)
+```
+## accessing attributes using '.' & '[]' notations
+console.log(product.id)
+console.log(product['id'])
+## use the '.' notation when updating the value of an existing attribute
+product.cost = 20
+## use the '[]' notation when creating a new attribute
+product['category'] = 'stationary'
+
+## Iterating an object through its attributes
+```js
+// print the attribute names
+for (var key in product){
+    console.log(key)
+}
+
+// print the attribute names & its values
+for (var key in product){
+    console.log(key, product[key])
+}
+```
+
+### Assignment
+- Write a 'PrintAttrs' function that prints ONLY the name & value of the "properties" of the given object (omit the "methods")
