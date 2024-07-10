@@ -169,4 +169,17 @@ nos = nos.concat(20,30,40)
 ### slice, splice, at, keys, values etc
 ### Assignment
 - Write a 'GetAttrs' function that returns ONLY the name & value of the "properties" of the given object (omit the "methods") as an array
-ex output: [['id', 100],['name', 'pen'], ['cost', 10]]
+
+ex output: `[['id', 100],['name', 'pen'], ['cost', 10]]`
+```js
+function GetAttrs(o){
+    var result = []
+    for (var key in o){
+        if (typeof o[key] !== 'function'){
+            var attr = [ key, o[key]]
+            result.push(attr)
+        }
+    }
+    return result
+}
+```
