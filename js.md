@@ -129,3 +129,41 @@ function printAttrs(o){
     }
 }
 ```
+## Array
+```js
+var nos = []
+var nos = [3,1,4,2,5]
+```
+### using the indexer
+```js
+console.log(nos[0])
+```
+### count
+```js
+console.log(nos.length)
+```
+### iterating using indexer
+```js
+for (var idx = 0; idx < nos.length; idx++){
+    console.log(nos[idx]);
+}
+```
+### iteraing using for-of
+```js
+for(var no of nos){
+    console.log(no)
+}
+```
+### adding a new item
+```js
+nos.push(10)
+```
+### removing an item
+```javascript
+nos.pop()
+```
+### other useful methods
+```javascript
+nos = nos.concat(20,30,40)
+```
+### slice, splice, at, keys, values etc
