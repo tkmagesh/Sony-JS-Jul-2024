@@ -120,3 +120,12 @@ for (var key in product){
 
 ### Assignment
 - Write a 'PrintAttrs' function that prints ONLY the name & value of the "properties" of the given object (omit the "methods")
+```js
+function printAttrs(o){
+    for (var key in o){
+        if (typeof o[key] !== 'function'){
+            console.log(key, o[key])
+        }
+    }
+}
+```
