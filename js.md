@@ -183,3 +183,37 @@ function GetAttrs(o){
     return result
 }
 ```
+## Function Invocation Patterns
+### Important
+`In JavaScript, it does not matter WHO owns the function or WHERE the function is. What matters is 'HOW' the function is invoked`
+
+## As a method of an object
+
+`this -> obj`
+
+```js
+var emp = {
+    name : 'Magesh'
+}
+
+function whoAmI(){
+    console.log('I am ', this.name);
+}
+// make the function a method of emp
+emp['whoAmI'] = whoAmI
+emp.whoAmI()
+// ================
+var product = {
+    name : 'Pen'
+}
+// make the function a method of product
+product['whoAmI'] = whoAmI
+product.whoAmI()
+```
+
+## As a 'function'
+`this -> global (window in the browser)`
+```js
+window.name = 'Chrome Browser'
+whoAmI()
+```
