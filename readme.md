@@ -1,6 +1,6 @@
 # JavaScript, TypeScript & Test Automation
 ## Magesh Kuppan
-    - tkmagesh77@gmail.com
+- tkmagesh77@gmail.com
 ## Schedule
 - Commence      : 9:30 AM
 - Tea Break     : 11:00 AM (15 mins)
@@ -12,3 +12,4 @@
 - Discussion & Code
 ## Repository
 - https://github.com/tkmagesh/sony-js-jul-2024
+
