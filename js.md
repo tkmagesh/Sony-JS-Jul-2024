@@ -375,3 +375,28 @@ var isOdd = memoize(function(no){
     return no % 2 === 1;
 })
 ```
+### 4. Using the 'new' keyword
+When a function is invoked using the 'new' keyword
+1. this -> new object instance
+2. this -> returned by default
+#### Constructor Functions 
+- Functions that behave like classes
+- Constructor function names must start with uppercase (by convention)
+```js
+function Product(id, name, cost){
+    // this -> new object
+
+    // attributes
+    this.id = id;
+    this.name = name;
+    this.cost = cost;
+
+    // methods
+    this.applyDiscount = function(discount){
+        this.cost = this.cost * ((100-discount)/100)
+    }
+    // this -> returned by default
+}
+var pen = new Product(100, 'Pen', 10)
+pen.applyDiscount(10)
+```
