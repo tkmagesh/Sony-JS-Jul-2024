@@ -451,3 +451,27 @@ add(10,20)
 add(10,20,30,40)
 add(10,20,30,40,50,60)
 ```
+
+```js
+function add(){
+    function parseArg(n){
+        if (typeof n === 'function') return add(n())
+        if (Array.isArray(n)) return add.apply(this, n);
+        return isNaN(n) ? 0 : parseInt(n)
+    }
+    return arguments.length <= 1 ? parseArg(arguments[0]) : parseArg(arguments[0]) + add(Array.prototype.slice.call(arguments, 1))
+}
+
+add() //=> 0
+add(10) //=> 10
+add(10, 20) //=> 30
+add(10, '20') //=> 30
+add(10, '20', 'abc') //=> 30
+add(10,20,30,40,50) //=> 150
+add([10,20],[30,40,50]) //=> 150
+add([10,'20'],[30,40,50,'abc']) //=> 150
+add([10,'20'],[30,40,[50,'abc']]) //=> 150
+add(function(){ return 10;}, function(){ return 20;}) //=> 30
+add(function(){ return [10,'20'];}, function(){ return [30,40,[50,'abc']]}) //=> 150
+add([function(){ return [10,'20'];}, function(){ return [30,40,[50,'abc']]}]) //=> 150
+```
