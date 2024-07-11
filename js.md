@@ -400,3 +400,20 @@ function Product(id, name, cost){
 var pen = new Product(100, 'Pen', 10)
 pen.applyDiscount(10)
 ```
+### 5. Using the 'call()' method
+```js
+var emp = {
+    name : 'Magesh'
+}
+function whoAmI(){
+    console.log('I am ', this.name);
+}
+
+whoAmI.call(emp)
+
+// passing arguments
+function greet(salutation, message){
+    console.log(salutation + this.name + ', ' + message);
+}
+greet.call(emp, 'Mr.', 'Have a nice day!')
+```
