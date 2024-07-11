@@ -417,3 +417,21 @@ function greet(salutation, message){
 }
 greet.call(emp, 'Mr.', 'Have a nice day!')
 ```
+
+### 6. Using the 'apply()' method
+```js
+var emp = {
+    name : 'Magesh'
+}
+function whoAmI(){
+    console.log('I am ', this.name);
+}
+
+whoAmI.apply(emp)
+
+// passing arguments
+function greet(salutation, message){
+    console.log(salutation + this.name + ', ' + message);
+}
+greet.apply(emp, ['Mr.', 'Have a nice day!'])
+```
