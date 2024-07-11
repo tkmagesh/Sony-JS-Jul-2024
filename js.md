@@ -314,3 +314,24 @@ function spinnerFactory(){
     return spinner;
 }
 ```
+
+#### Memoization using Closures
+```js
+var isPrime = (function(){
+    var results = {};
+    function isPrime(no){
+        if (typeof results[no] !== 'undefined')
+            return results[no];
+        console.log('processing :', no);
+        for (var i = 2; i <= (no/2); i++){
+            if (no % i === 0){
+                results[no] = false;
+                return results[no];
+            }
+        }
+        results[no] = true;
+        return results[no];
+    }
+    return isPrime;
+})()
+```
