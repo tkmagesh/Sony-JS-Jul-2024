@@ -399,6 +399,9 @@ function Product(id, name, cost){
 }
 var pen = new Product(100, 'Pen', 10)
 pen.applyDiscount(10)
+
+// pen.constructor === Product
+
 ```
 ### 5. Using the 'call()' method
 ```js
@@ -474,4 +477,26 @@ add([10,'20'],[30,40,[50,'abc']]) //=> 150
 add(function(){ return 10;}, function(){ return 20;}) //=> 30
 add(function(){ return [10,'20'];}, function(){ return [30,40,[50,'abc']]}) //=> 150
 add([function(){ return [10,'20'];}, function(){ return [30,40,[50,'abc']]}]) //=> 150
+```
+
+## Prototypal Inheritance
+`One object (prototype) acts as the base object for a family (instances) of objects`
+
+![image](./images/prototypal-inheritance.png)
+
+```js
+function Product(id, name, cost){
+    // this -> new object
+
+    // attributes
+    this.id = id;
+    this.name = name;
+    this.cost = cost;
+    // this -> returned by default
+}
+
+// methods
+Product.prototype.applyDiscount = function(discount){
+    this.cost = this.cost * ((100-discount)/100)
+}
 ```
