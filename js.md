@@ -335,3 +335,43 @@ var isPrime = (function(){
     return isPrime;
 })()
 ```
+
+```js
+var isOdd = (function(){
+    var results = {};
+    function isOdd(no){
+        if (typeof results[no] !== 'undefined')
+            return results[no];
+        console.log('processing :', no);
+        results[no] = nos % 2 === 1 ? true : false
+        return results[no]
+    }
+    return isOdd;
+})()
+```
+
+##### Generic Memoization
+```js
+function memoize(fn){
+    var results = {};
+    return function(no){
+        if (typeof results[no] !== 'undefined')
+            return results[no];
+        console.log('processing :', no);
+        results[no] = fn(no)
+        return results[no];
+    }
+}
+
+var isPrime = memoize(function(no){
+    for (var i = 2; i <= (no/2); i++){
+        if (no % i === 0) 
+            return false
+    }
+    return true
+});
+
+var isOdd = memoize(function(no){
+    return no % 2 === 1;
+})
+```
