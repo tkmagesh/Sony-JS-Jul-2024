@@ -49,12 +49,22 @@ function multiplyAsync(x, y) {
   return p;
 }
 
-function process(x,y,z){
-  /* 
-  add x & y using addAsync
-  multiply the result with z using the multiplyAsync
-  print the result 
-  */
+async function process(x,y,z){
+  
+  // add x & y using addAsync
+  var addResult = await addAsync(x,y)
+  var result = await multiplyAsync(addResult, z)
+
+  // do not print the result but return it
+  // console.log(result)
+  return result
 }
 
-process(10,20,5)
+async function processClient(x,y,z){
+  // get the result from the process function
+  var result = await process(x,y,z)
+  // print the result
+  console.log(result)
+}
+
+processClient(10,20,5)
