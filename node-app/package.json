@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "a node application setup demo",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "custom" : "echo \"Info: custom command executed\" && exit 1",
