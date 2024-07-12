@@ -36,3 +36,25 @@ async function addAsyncClient2(x, y) {
     var result = await addAsync(x, y);
     console.log("[@client] result :", result);
 }
+
+function multiplyAsync(x, y) {
+  console.log("   [@service] processing " + x + " and " + y);
+  var p = new Promise(function (resolveFn, rejectFn) {
+    setTimeout(function () {
+      console.log("   [@service] returning result");
+      var result = x * y;
+      resolveFn(result); // communicate the result to the promise
+    }, 4000);
+  });
+  return p;
+}
+
+function process(x,y,z){
+  /* 
+  add x & y using addAsync
+  multiply the result with z using the multiplyAsync
+  print the result 
+  */
+}
+
+process(10,20,5)
