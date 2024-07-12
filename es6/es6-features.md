@@ -119,17 +119,146 @@ let add = (x,y) => x + y;
 
 ## template strings
 ```js
+let x = 100, y = 200
+let s1 = 'sum of ' + x + ' and ' + y + ' is ' + (x+y)
+
+// template strings
+let s2 = `sum of ${x} and ${y} is ${x+y}`
 ```
 
 ## iterators (for..of)
 ```js
+let nos = [3,1,4,2,5]
+
+for(let no of nos)
+    console.log(`no : ${no}`)
 ```
 
 ## classes
 ```js
+class Employee {
+
+    // static attribute
+    static modelName = 'Employee'
+
+    // private attribute (instance)
+    #id = 0;
+
+    // public attributes (instance)
+    name = '';
+    salary = 0;
+
+    // accessors
+    get id(){
+        console.log('id getter invoked')
+        return this.#id;
+    }
+
+    set id(val){
+        console.log('id setter invoked')
+        // validate the data
+        this.#id = val;
+    }
+
+    // constructor method
+    constructor(id, name, salary){
+        this.#id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+
+    // instance method
+    format(){
+        return `id = ${this.#id}, name = ${this.name}, salary = ${this.salary}`
+    }
+
+    // static method
+    static IsEmployee(obj){
+        return obj instanceof Employee;
+    }
+
+}
+
+// usage
+let e1 = new Employee(100, 'Magesh', 10000)
+
+console.log(e1.id)
+
+e1.id = 200
+
+e1.format()
+
+Employee.IsEmployee(e1)
 ```
 
 ## class inheritance
 ```js
+class Employee {
+
+    // static attribute
+    static modelName = 'Employee'
+
+    // private attribute (instance)
+    #id = 0;
+
+    // public attributes (instance)
+    name = '';
+    salary = 0;
+
+    // accessors
+    get id(){
+        console.log('id getter invoked')
+        return this.#id;
+    }
+
+    set id(val){
+        console.log('id setter invoked')
+        // validate the data
+        this.#id = val;
+    }
+
+    // constructor method
+    constructor(id, name, salary){
+        this.#id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+
+    // instance method
+    format(){
+        return `id = ${this.#id}, name = ${this.name}, salary = ${this.salary}`
+    }
+
+    // static method
+    static IsEmployee(obj){
+        return obj instanceof Employee;
+    }
+
+}
+
+class FulltimeEmployee extends Employee {
+
+    benefits = '';
+
+    constructor(id, name, salary, benefits){
+        super(id, name, salary);
+        this.benefits = benefits;
+    }
+
+    // overriding the Employee.format() method
+    format(){
+        return `${super.format()}, benefits = ${this.benefits}`
+    }
+    
+}
+
+// usage
+var fte = new FulltimeEmployee(200, 'Suresh', 20000, 'Healthcare')
+
+console.log(fte.format())
+
+console.log(fte.id)
+
+fte.id = 300
 ```
 
