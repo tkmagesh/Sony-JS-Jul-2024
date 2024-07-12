@@ -57,22 +57,64 @@ sum(...nos)
 ```
 ## object destructuring
 ```js
+let emp = { id  : 100, name : 'Magesh', salary : 10000 }
+
+// variable names must match the attribute names
+let {id, salary}= emp
+
+// different variable names
+let {id:x, salary:y} = emp
+
 ```
 
 ## rest operator (object)
 ```js
+let emp = { id  : 100, name : 'Magesh', salary : 10000 }
+
+let { id, ...z } = emp
 ```
 
 ## spread operator (object)
 ```js
+let fulltimeEmployee = { ...emp, salary : 20000, benefits : 'healthcare' }
 ```
 
 ## default arguments
 ```js
+function add(x = 100,y = 200){
+    return x + y;
+}
+
+add()
+
+add(10)
+
+add(undefined, 20)
+
+add(10,20)
+
 ```
 
 ## arrow functions
 ```js
+/*
+// function statement
+function add(x,y){
+    return x + y;
+}
+
+// function expression
+let add = function(x,y){
+    return x + y;
+}
+
+// arrow function
+let add = (x,y) => {
+    return x + y;
+}
+*/
+// if the function body has only expression that is returned
+let add = (x,y) => x + y;
 ```
 
 ## template strings

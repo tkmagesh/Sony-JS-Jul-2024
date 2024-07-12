@@ -54,9 +54,18 @@ function filter(list, criteriaFn){
 }
 
 // filter stationary products
+/* 
 function stationaryProductCriteria(p){
   return p.category === 'stationary';
-}
+} 
+*/
+/* 
+let stationaryProductCriteria = (p) => {
+  return p.category === "stationary";
+} 
+*/ 
+let stationaryProductCriteria = p => p.category === "stationary";
+
 var stationaryProducts = filter(products, stationaryProductCriteria)
 console.log('Stationary Products')
 console.table(stationaryProducts)
@@ -66,7 +75,8 @@ console.table(stationaryProducts)
 function costlyProductCriteria(p){
   return p.cost > 50
 }
-var costlyProducts = filter(products, costlyProductCriteria)
+// var costlyProducts = filter(products, costlyProductCriteria)
+var costlyProducts = filter(products, p => p.cost > 50)
 console.log('Costly Products')
 console.table(costlyProducts)
 
