@@ -40,4 +40,11 @@ sayHi()
 console.log(add(100,200))
 console.log(subtract(100,200))
 
-console.log('Welcome to Node.js!')
+// importing from folder
+import {isOdd, isEven} from './utils/index.js'
+console.log(isOdd(20))
+console.log(isEven(20));
+
+// importing 3rd party packages installed using "npm install"
+import chalk from 'chalk'
+console.log(chalk.blue.underline('Welcome to Node.js!'))
