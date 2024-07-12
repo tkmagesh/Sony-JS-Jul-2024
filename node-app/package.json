@@ -1,0 +1,17 @@
+{
+  "name": "node-app",
+  "version": "1.0.0",
+  "description": "a node application setup demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "custom" : "echo \"Info: custom command executed\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "demo",
+    "node"
+  ],
+  "author": "Magesh K",
+  "license": "ISC"
+}
